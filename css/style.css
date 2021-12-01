@@ -116,6 +116,7 @@ button {
     top: 30px;
     z-index: 4;
     display: none;
+    width: 400px;
 }
 
 .serchBox2 {
@@ -123,6 +124,7 @@ button {
     top: 30px;
     z-index: 4;
     display: none;
+    width: 400px;
 }
 
 h2 {
@@ -134,7 +136,7 @@ h2 {
 #search1 {
     padding: 15px;
     border-radius: 10px;
-    width: 400px;
+    width: 100%;
     border: none;
     outline: none;
     background-color: #eeeaf4;
@@ -146,7 +148,7 @@ h2 {
 #search2 {
     padding: 15px;
     border-radius: 10px;
-    width: 400px;
+    width: 100%;
     border: none;
     outline: none;
     background-color: #eeeaf4;
@@ -201,7 +203,25 @@ li {
       width: 90%;
     }
 
-    #search1 , #search2 {
+    .serchBox , .serchBox2 {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    .serchBox , .serchBox2 {
+        width: 320px;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .serchBox , .serchBox2 {
+        width: 270px;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .serchBox , .serchBox2 {
         width: 250px;
     }
 }
