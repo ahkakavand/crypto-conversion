@@ -196,8 +196,12 @@ li {
 
 /* responsive */
 
-@media only screen and (max-width: 450px) {
-    .container , .container2 , #search1 , #search2{
+@media screen and (max-width: 450px) {
+    .container , .container2 {
       width: 90%;
+    }
+
+    #search1 , #search2 {
+        width: 250px;
     }
 }
