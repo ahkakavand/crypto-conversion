@@ -192,3 +192,12 @@ li {
     color: #F44336;
     margin-top: 5px;
 }
+
+
+/* responsive */
+
+@media only screen and (max-width: 450px) {
+    .container , .container2 {
+      width: 90%;
+    }
+}
