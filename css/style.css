@@ -11,9 +11,19 @@ body {
     align-items: center;
     min-height: 100vh;
     justify-content: center;
+    flex-direction: column;
 }
 
 .container {
+    background: #f9f9f9;
+    width: 400px;
+    border-radius: 20px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 20px;
+}
+
+.container2 {
+    margin-top: 20px;
     background: #f9f9f9;
     width: 400px;
     border-radius: 20px;
@@ -81,7 +91,7 @@ button {
 
 .checng {
     display: block;
-    margin: 30px auto 10px auto;
+    margin: 30px auto 20px auto;
     padding: 15px;
     border-radius: 100%;
     cursor: pointer;
@@ -124,7 +134,7 @@ h2 {
 #search1 {
     padding: 15px;
     border-radius: 10px;
-    width: 300px;
+    width: 400px;
     border: none;
     outline: none;
     background-color: #eeeaf4;
@@ -136,7 +146,7 @@ h2 {
 #search2 {
     padding: 15px;
     border-radius: 10px;
-    width: 300px;
+    width: 400px;
     border: none;
     outline: none;
     background-color: #eeeaf4;
@@ -146,7 +156,7 @@ h2 {
     font-weight: bold;
 }
 
-.overlay {
+.overlay , .overlay2 {
     position: absolute;
     top: 0;
     right: 0;
@@ -169,4 +179,16 @@ li {
     font-weight: bold;
     margin-top: 5px;
     cursor: pointer;
+}
+
+.nameBox , .nameBox2 {
+    max-height: 274px;
+    overflow: hidden;
+}
+
+.price , .price2 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #F44336;
+    margin-top: 5px;
 }
