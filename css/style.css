@@ -204,24 +204,6 @@ li {
     }
 
     .serchBox , .serchBox2 {
-        width: 350px;
-    }
-}
-
-@media screen and (max-width: 370px) {
-    .serchBox , .serchBox2 {
-        width: 320px;
-    }
-}
-
-@media screen and (max-width: 325px) {
-    .serchBox , .serchBox2 {
-        width: 270px;
-    }
-}
-
-@media screen and (max-width: 280px) {
-    .serchBox , .serchBox2 {
-        width: 250px;
+        width: 90%;
     }
 }
