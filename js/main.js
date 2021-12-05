@@ -154,4 +154,6 @@ function checngCoin() {
 
     document.querySelector('#firstcoin').value = ''
     document.querySelector('#secondcoin').value = ''
+
+    alert('Coming Soon :)')
 }
