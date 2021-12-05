@@ -63,7 +63,7 @@ function getNameCoin1(e) {
         let data = await response.json()
         let allData = data.data
         allData.forEach(item => {
-            if (item.name.toLowerCase().includes(e.target.value)) {
+            if (item.name.toLowerCase().includes(e.target.value.toLowerCase())) {
                 let li = document.createElement('li')
                 li.innerText = item.name
                 li.classList = 'liNameCoin'
