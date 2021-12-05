@@ -14,22 +14,23 @@ let nameBox2 = document.querySelector('.nameBox2')
 let searchInput1 = document.querySelector('#search1')
 let searchInput2 = document.querySelector('#search2')
 
+let button = document.querySelector('#submit')
 
 // eventListeners
-btnFirstSelect.addEventListener('click' , searchFirstCoin)
+btnFirstSelect.addEventListener('click', searchFirstCoin)
 
-overlay.addEventListener('click' , removeOverlay)
-overlay2.addEventListener('click' , removeOverlay2)
+overlay.addEventListener('click', removeOverlay)
+overlay2.addEventListener('click', removeOverlay2)
 
-searchInput1.addEventListener('input' , getNameCoin1)
-searchInput2.addEventListener('input' , getNameCoin2)
+searchInput1.addEventListener('input', getNameCoin1)
+searchInput2.addEventListener('input', getNameCoin2)
 
-nameBox.addEventListener('click' , addNameCoin)
-nameBox2.addEventListener('click' , addNameCoin2)
+nameBox.addEventListener('click', addNameCoin)
+nameBox2.addEventListener('click', addNameCoin2)
 
-btnSecondSelect.addEventListener('click' , searchSecondCoin)
+btnSecondSelect.addEventListener('click', searchSecondCoin)
 
-
+button.addEventListener('click' , convertCoin)
 
 
 // functions
@@ -42,14 +43,14 @@ function searchFirstCoin(e) {
 function removeOverlay(e) {
     if (e.target.classList.contains('overlay')) {
         overlay.style.display = 'none'
-        searchBox.style.display= 'none'
+        searchBox.style.display = 'none'
     }
 }
 
 function removeOverlay2(e) {
     if (e.target.classList.contains('overlay2')) {
         overlay2.style.display = 'none'
-        searchBox2.style.display= 'none'
+        searchBox2.style.display = 'none'
     }
 }
 
@@ -71,10 +72,10 @@ function getNameCoin1(e) {
 }
 
 function addNameCoin(e) {
-        (async () => {
-            if (e.target.classList.contains('liNameCoin')) {
-            overlay.style.display = 'none'        
-            searchBox.style.display= 'none'
+    (async () => {
+        if (e.target.classList.contains('liNameCoin')) {
+            overlay.style.display = 'none'
+            searchBox.style.display = 'none'
             let nameCoin = e.target.innerText
             btnFirstSelect.innerText = nameCoin
             let url = `https://data.messari.io/api/v1/assets/${nameCoin}/metrics`
@@ -112,15 +113,31 @@ function getNameCoin2(e) {
 function addNameCoin2(e) {
     (async () => {
         if (e.target.classList.contains('liNameCoin2')) {
-        overlay2.style.display = 'none'        
-        searchBox2.style.display= 'none'
-        let nameCoin = e.target.innerText
-        btnSecondSelect.innerText = nameCoin
-        let url = `https://data.messari.io/api/v1/assets/${nameCoin}/metrics`
-        let response = await fetch(url)
-        let data = await response.json()
-        let price = data.data.market_data.price_usd
-        document.querySelector('.price2').innerText = `${data.data.symbol} Price : ${price.toFixed(3)}`
-    }
-})();
+            overlay2.style.display = 'none'
+            searchBox2.style.display = 'none'
+            let nameCoin = e.target.innerText
+            btnSecondSelect.innerText = nameCoin
+            let url = `https://data.messari.io/api/v1/assets/${nameCoin}/metrics`
+            let response = await fetch(url)
+            let data = await response.json()
+            let price = data.data.market_data.price_usd
+            document.querySelector('.price2').innerText = `${data.data.symbol} Price : ${price.toFixed(3)}`
+        }
+    })();
+}
+
+function convertCoin() {
+    let amount1 = +document.querySelector('#firstcoin').value
+    let amount2 = +document.querySelector('#secondcoin').value
+
+    let name1 = btnFirstSelect.innerText
+    let name2 = btnSecondSelect.innerText
+
+    let price1 = +document.querySelector('.price').innerText.slice(document.querySelector('.price').innerText.indexOf(' : ') + 2)
+    let price2 = +document.querySelector('.price2').innerText.slice(document.querySelector('.price2').innerText.indexOf(' : ') + 2)
+    
+    let amountCoin1 = amount1 * price1
+    let res = amountCoin1 / price2
+
+    document.querySelector('#secondcoin').value = res.toFixed(5)
 }
