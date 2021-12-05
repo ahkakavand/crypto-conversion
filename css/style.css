@@ -205,6 +205,22 @@ li {
     background-color: #AED581;
     color: #33691E;
 }
+
+.myInfo {
+    margin-top: 10px ;
+    font-size: 16px;
+    color: #7a6eaa;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    transition: all ease 0.3s;
+}
+
+a:hover {
+    color: #7a6eaa;
+}
 /* responsive */
 
 @media screen and (max-width: 450px) {

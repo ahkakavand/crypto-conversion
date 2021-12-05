@@ -15,6 +15,7 @@ let searchInput1 = document.querySelector('#search1')
 let searchInput2 = document.querySelector('#search2')
 
 let button = document.querySelector('#submit')
+let checng = document.querySelector('.checng')
 
 // eventListeners
 btnFirstSelect.addEventListener('click', searchFirstCoin)
@@ -31,6 +32,7 @@ nameBox2.addEventListener('click', addNameCoin2)
 btnSecondSelect.addEventListener('click', searchSecondCoin)
 
 button.addEventListener('click' , convertCoin)
+checng.addEventListener('click' , checngCoin)
 
 
 // functions
@@ -140,4 +142,13 @@ function convertCoin() {
     let res = amountCoin1 / price2
 
     document.querySelector('#secondcoin').value = res.toFixed(5)
+}
+
+
+function checngCoin() {
+    btnFirstSelect.innerHTML = 'select coin<i class="fas fa-angle-down" style="margin-left: 5px;"></i>'
+    btnSecondSelect.innerHTML = 'select coin<i class="fas fa-angle-down" style="margin-left: 5px;"></i>'
+
+    document.querySelector('#firstcoin').value = ''
+    document.querySelector('#secondcoin').value = ''
 }
