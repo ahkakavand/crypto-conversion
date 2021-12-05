@@ -40,6 +40,8 @@ function searchFirstCoin(e) {
     e.preventDefault()
     searchBox.style.display = 'block'
     overlay.style.display = 'block'
+    searchInput1.focus()
+
 }
 
 function removeOverlay(e) {
@@ -93,6 +95,7 @@ function searchSecondCoin(e) {
     e.preventDefault()
     searchBox2.style.display = 'block'
     overlay2.style.display = 'block'
+    searchInput2.focus()
 }
 
 function getNameCoin2(e) {
